@@ -44,6 +44,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
         for (int right = 0; right < s.length(); right++) {
             char current = s.charAt(right);
             while (set.contains(current)) {
+                //shrink from the left by moving the `left` pointer until all characters in the window are unique.
                 set.remove(s.charAt(left++));
             }
             set.add(current);
