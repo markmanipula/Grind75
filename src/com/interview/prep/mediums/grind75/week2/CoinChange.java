@@ -31,22 +31,19 @@ public class CoinChange {
      * Approach:
      * Use Breadth-First Search (BFS) to find the minimum number of coins needed to make up a given amount.
      * Each node represents an amount of money formed by using some coins, starting from 0.
-     * We explore all possible sums that can be formed incrementally by adding available coins,
-     * visiting each node level by level (or layer by layer) until we reach the target amount.
+     *
+     * BFS explores all possible sums incrementally by adding available coins, ensuring that the first time we
+     * reach the target amount, it uses the minimum number of coins.
      *
      * Steps:
-     * 1. Initialize a queue to keep track of the current sums reached, starting with 0.
-     * 2. Use a set to track visited sums to avoid processing the same amount multiple times.
-     * 3. For each level of the BFS, increment the coin count and process all states reachable
-     *    from the current sums using the available coins.
-     * 4. If we reach the target amount, return the count of coins used.
-     * 5. If the queue is exhausted without finding the target, return -1 indicating that it is not possible.
+     * 1. Initialize a queue to track current sums, starting with 0, and a set to track visited sums.
+     * 2. For each level of the BFS, increment the coin count and process all sums reachable from the current
+     *    sum using available coins.
+     * 3. If a sum equals the target amount, return the coin count.
+     * 4. If the queue is exhausted without finding the target amount, return -1.
      *
-     * Time complexity: O(n * m), where n is the target amount and m is the number of coin denominations.
-     * This is because we may visit all amounts from 0 to `amount` and for each amount, we explore all `m` coins.
-     *
-     * Space complexity: O(n) for the storage of the queue and the set of visited amounts, since we may store
-     * at most `amount` unique sums.
+     * Time Complexity: O(n * m), where n is the target amount and m is the number of coin denominations.
+     * Space Complexity: O(n), for the queue and the visited set.
      */
     public int coinChangeBfs(int[] coins, int amount) {
         if (amount == 0) return 0;
@@ -86,17 +83,23 @@ public class CoinChange {
     }
 
     /**
-     * Approach: Use a recursive depth-first search (DFS) with memoization to find the minimum number of coins needed
-     * to make up a given amount. For each call, we explore the possibility of using each type of coin in the coins array.
-     * We continue recursively until the amount becomes zero (solution found) or negative (invalid path).
+     * Approach:
+     * Use a recursive depth-first search (DFS) with memoization to find the minimum number of coins needed
+     * to make up a given amount. For each recursive call, explore using each type of coin in the `coins` array.
      *
-     * The memoization technique caches results for each unique amount, preventing redundant calculations and improving
+     * Memoization caches results for each unique amount, preventing redundant calculations and improving
      * efficiency for overlapping subproblems.
      *
-     * Time complexity: O(n * m), where n is the target amount and m is the number of coin denominations.
-     * This is because we explore up to n different amounts and for each amount, we potentially check m coins.
+     * Steps:
+     * 1. Base case: If the amount is zero, return 0 (solution found). If the amount is negative, return
+     *    Integer.MAX_VALUE (invalid path).
+     * 2. If the result for the current amount is already in the memo, return it.
+     * 3. For each coin, recursively calculate the minimum coins needed for the remaining amount (`amount - coin`).
+     *    Update the result with the smallest value.
+     * 4. Cache the result for the current amount and return it.
      *
-     * Space complexity: O(n) for the memoization cache that stores results for amounts from 0 to the target amount.
+     * Time Complexity: O(n * m), where n is the target amount and m is the number of coin denominations.
+     * Space Complexity: O(n), for the memoization map storing results for amounts from 0 to the target amount.
      */
     public int coinChangeDfs(int[] coins, int amount) {
 
