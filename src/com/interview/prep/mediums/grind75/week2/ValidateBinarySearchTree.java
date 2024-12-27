@@ -49,6 +49,7 @@ public class ValidateBinarySearchTree {
         return isValidBSTHelper(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
+    //using long to not limit to the integer min/max value
     private boolean isValidBSTHelper(TreeNode node, long left, long right) {
         if (node == null) return true;
 
@@ -56,7 +57,9 @@ public class ValidateBinarySearchTree {
             return false;
         }
 
+        //go to left child and use the current node to compare it and make sure it less than it
         boolean leftTree = isValidBSTHelper(node.left, left, node.val);
+        //go to right child and use the current node to compare it and make sure it greater than it
         boolean rightTree = isValidBSTHelper(node.right, node.val, right);
 
         return leftTree && rightTree;
