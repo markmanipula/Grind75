@@ -33,7 +33,10 @@ public class RottingOranges {
 
     /**
      * Approach: bfs. use queue and the store the coordinates for rotten oranges
-     * use directional array to populate adjacent neighbors to 2
+     *   Key points:
+     *      Keep track of the number of fresh oranges. If all fresh oranges are processed during BFS,
+     *      return the time taken.
+     *      If there are still fresh oranges left after BFS, return -1 (some oranges cannot be rotted).
      *
      * Time complexity: o(n x m) where n is the row count and m is the column count
      * Space complexity: o(n x m) in worst case if all items in the matrix is 'rotten'
