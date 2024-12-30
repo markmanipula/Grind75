@@ -4,6 +4,48 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Given an array of words `words` and a string `searchWord`, return a list of lists containing
+ * up to three lexicographically smallest words from `words` that start with each prefix of `searchWord`.
+ *
+ * Input:
+ * - words: An array of strings representing the available words.
+ * - searchWord: A string representing the word whose prefixes are used for searching.
+ *
+ * Output:
+ * - A list of lists where each list corresponds to a prefix of `searchWord` and contains up to
+ *   three words from `words` that start with the prefix, sorted lexicographically.
+ *
+ * Example 1:
+ * Input: words = ["mobile", "mouse", "moneypot", "monitor", "mousepad"], searchWord = "mouse"
+ * Output: [
+ *   ["mobile", "moneypot", "monitor"],
+ *   ["mobile", "moneypot", "monitor"],
+ *   ["mouse", "mousepad"],
+ *   ["mouse", "mousepad"],
+ *   ["mouse", "mousepad"]
+ * ]
+ *
+ * Example 2:
+ * Input: words = ["havana"], searchWord = "havana"
+ * Output: [
+ *   ["havana"],
+ *   ["havana"],
+ *   ["havana"],
+ *   ["havana"],
+ *   ["havana"],
+ *   ["havana"]
+ * ]
+ *
+ * Example 3:
+ * Input: words = ["bags", "baggage", "banner", "box", "cloths"], searchWord = "bags"
+ * Output: [
+ *   ["baggage", "bags", "banner"],
+ *   ["baggage", "bags", "banner"],
+ *   ["bags"],
+ *   ["bags"]
+ * ]
+ */
 public class Lexicographic {
 
     /**

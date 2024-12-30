@@ -3,6 +3,27 @@ package com.interview.prep.anduril;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Given an array of words `wordsDict` and two different words `word1` and `word2`,
+ * return the shortest distance between these two words in the array.
+ *
+ * Input:
+ * - wordsDict: An array of strings representing a dictionary of words.
+ * - word1, word2: Two distinct words present in the dictionary.
+ *
+ * Output:
+ * - An integer representing the shortest distance (in terms of indices) between `word1` and `word2`.
+ *
+ * Example:
+ * Input: wordsDict = ["practice", "makes", "perfect", "coding", "makes"]
+ *        word1 = "coding", word2 = "practice"
+ * Output: 3
+ *
+ * Example:
+ * Input: wordsDict = ["practice", "makes", "perfect", "coding", "makes"]
+ *        word1 = "makes", word2 = "coding"
+ * Output: 1
+ */
 public class ShortestWordDistance {
 
     /**

@@ -7,6 +7,30 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Given a graph represented as an edge list and a number of nodes, determine if the graph
+ * is disjoint (i.e., there is more than one connected component). Implement two methods:
+ *
+ * 1. Check if removing any edge disconnects the graph.
+ * 2. Count connected components to determine if the graph is already disjoint.
+ *
+ * Input:
+ * - edges: A 2D array representing the edges of the graph, where each edge connects two nodes.
+ * - nodes (n): The total number of nodes in the graph.
+ *
+ * Output:
+ * - A boolean value indicating if the graph is disjoint.
+ *
+ * Example 1:
+ * Input: edges = [[0, 1], [1, 2], [2, 3]], nodes = 4
+ * Output: false
+ * Explanation: The graph has one connected component.
+ *
+ * Example 2:
+ * Input: edges = [[0, 1], [2, 3]], nodes = 4
+ * Output: true
+ * Explanation: The graph has two connected components: {0, 1} and {2, 3}.
+ */
 public class DisjointGraph {
 
     /**
