@@ -62,13 +62,13 @@ public class MergeKSortedList {
      * 1. Traverse through all linked lists in the input array `lists` and collect all their node values in a list.
      * 2. Sort the list of values.
      * 3. Create a new sorted linked list by iterating through the sorted list of values and adding nodes to it sequentially.
-     * <p>
+     *
      * Time Complexity:
      * - Traversing all nodes: O(N), where N is the total number of nodes across all linked lists.
      * - Sorting the list: O(N log N).
      * - Constructing the new linked list: O(N).
      * Overall: O(N log N).
-     * <p>
+     *
      * Space Complexity:
      * - Additional list to store all node values: O(N).
      * - Sorting space complexity: O(N) (Java's TimSort is used internally for sorting).
