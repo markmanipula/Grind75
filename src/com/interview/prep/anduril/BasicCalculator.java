@@ -55,7 +55,7 @@ public class BasicCalculator {
 
             if (Character.isDigit(c)) {
                 // Build the current number
-                number = 10 * number + (int) (c - '0');
+                number = 10 * number + (c - '0');
             } else if (c == '+') {
                 // Add the previous number with the current sign to the result
                 result += sign * number;
