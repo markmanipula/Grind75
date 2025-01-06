@@ -53,7 +53,7 @@ public class Heaters {
      * Time complexity: O((m + n) log m), where n is the number of houses and m is the number of heaters.
      * Space complexity: depends on the sort implementation
      */
-    public int findRadiusBruteOptimal(int[] houses, int[] heaters) {
+    public int findRadiusOptimal(int[] houses, int[] heaters) {
         Arrays.sort(heaters);
         int max = Integer.MIN_VALUE;
 
