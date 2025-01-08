@@ -37,6 +37,7 @@ public class MaximumNumberOfVisiblePoints {
      * - Sort the angles and use a sliding window approach to find the maximum number of points within the given field of view.
      * - Sorting in necessary to handle the circular nature of angles.
      * - To handle circular wrapping of angles (e.g., transitioning from 359° to 0°), duplicate the sorted angle list with a 360° offset.
+     *   So points aren’t mistakenly excluded from your field of view. This wrapping simplifies comparisons and avoids edge-case errors.
      *
      * Time Complexity:
      * - O(n log n): Sorting the angles dominates the complexity.
