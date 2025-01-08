@@ -73,7 +73,6 @@ public class MaximumNumberOfVisiblePoints {
         for(int i = 0; i < n; i++) {
             angles.add(angles.get(i) + 360);
         }
-        System.out.println(angles);
 
         //sliding window approach
         int start = 0;

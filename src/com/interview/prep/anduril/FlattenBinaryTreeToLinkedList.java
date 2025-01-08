@@ -89,7 +89,7 @@ public class FlattenBinaryTreeToLinkedList {
      * Space complexity: O(1)
      * - The algorithm performs the flattening in-place without using recursion or additional data structures.
      */
-    public void flattenOptional(TreeNode root) {
+    public void flattenOptimal(TreeNode root) {
         TreeNode current = root;
         TreeNode prev = null;
 

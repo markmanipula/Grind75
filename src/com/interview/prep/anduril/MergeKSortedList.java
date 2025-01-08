@@ -82,7 +82,6 @@ public class MergeKSortedList {
         List<Integer> list = new ArrayList<>();
 
         for (ListNode listNode : lists) {
-            ListNode current = listNode;
             while (listNode != null) {
                 list.add(listNode.val);
                 listNode = listNode.next;
