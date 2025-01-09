@@ -59,9 +59,9 @@ public class SearchInRotatedSortedArray {
         while (left < right) {
             int pivot = left + (right - left) / 2;
             if (nums[pivot] < nums[right]) {
-                right = pivot; // The minimum is in the left half
+                right = pivot; // it means the smallest element (pivot) lies in the left half, including the current pivot.
             } else {
-                left = pivot + 1; // The minimum is in the right half
+                left = pivot + 1; //  it means the smallest element lies in the right half, excluding the current pivot.
             }
         }
 
